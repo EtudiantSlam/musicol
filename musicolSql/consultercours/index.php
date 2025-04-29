@@ -5,15 +5,12 @@ require $_SERVER['DOCUMENT_ROOT'] .  "/include/autoload.php";
 
 // chargement de l'interface
 $titre = "Consulter les cours d'une journée";
-// Instancier la classe Musicol
+$musicol = new Musicol(new Select());
+$data = json_encode($musicol->getLesJours());
 
-// Récupérer les jours dans le format json
-
-
-// Transmisssion des données à l'interface
 $head = <<<EOD
 <script>
-   
+    let data = $data;
 </script>
 EOD;
 
